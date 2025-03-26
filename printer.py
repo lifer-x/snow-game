@@ -7,12 +7,15 @@ console = Console()
 
 
 def printCostTable(
-    type: str,
+    type: str,  # Тип игрока(снегоуборочная компания/снежная погода)
     buying_cost_company: str,
     buying_cost_snow: str,
     boost_cost_company: str,
     boost_cost_snow: str,
 ) -> None:
+    """
+    Печать таблицы с ценами
+    """
     table = Table(show_header=True, show_lines=True, header_style="bold #f92672")
     table.add_column("Type of price")
     table.add_column("Coins")
@@ -26,6 +29,9 @@ def printCostTable(
 
 
 def printActionTable(type):
+    """
+    Печать таблицы с действиями
+    """
     table = Table(show_header=True, show_lines=True, header_style="bold green")
     table.add_column("Action")
     table.add_column("Command")
@@ -53,6 +59,9 @@ def printInfoTable(
     count_company: str,
     count_snow: str,
 ) -> None:
+    """
+    Печать таблицы с данными для оценки ситуации
+    """
     table = Table(show_header=True, show_lines=True, header_style="bold magenta")
     table.add_column("Entity")
     table.add_column("Tool")
@@ -98,6 +107,9 @@ def printInfoTable(
 
 
 def chooseMode() -> str:
+    """
+    Выбор между снегоуборочной компанией и снежной погодой
+    """
     utils.clear_console()
     type = None
     table = Table(show_header=True, show_lines=True, header_style="bold blue")
@@ -111,7 +123,7 @@ def chooseMode() -> str:
     console.print(table)
     type = input("Write here: ")
     while True:
-        if type.lower() != "company" or type.lower() != "snow":
+        if type.lower() == "company" or type.lower() == "snow":
             break
         utils.clear_console()
         console.print(table)
@@ -120,7 +132,10 @@ def chooseMode() -> str:
     return type
 
 
-def youWin() -> str:
+def youWin():
+    """
+    Уведомление о победе
+    """
     utils.clear_console()
     console.rule(
         ":tada: [bold #ffd700]Congratulations, you’ve won! :trophy: [/bold #ffd700]"
@@ -131,7 +146,10 @@ def youWin() -> str:
     console.print("Let this be a step towards new adventures!")
 
 
-def youLose() -> str:
+def youLose():
+    """
+    Уведомление о поражении
+    """
     utils.clear_console()
     console.rule(
         ":disappointed:[bold #ff0000] Unfortunately, you've lost...[/bold #ff0000] :crossed_swords:  ",

@@ -5,14 +5,17 @@ import utils
 
 
 def game(
-    type: str,
-    company_dict: dict,
-    snow_dict: dict,
-    used_type_company: str,
-    used_type_snow: str,
-    counts=1,
-    coins=0,
+    type: str,  # Тип игрока(снегоуборочная компания/снежная погода)
+    company_dict: dict,  # Словарь для снегоуборочной компании
+    snow_dict: dict,  # Словарь для снежной погоды
+    used_type_company: str,  # Инструмент снегоуборочной компании
+    used_type_snow: str,  # Инструмент снежной погоды
+    counts=1,  # Число инструментов
+    coins=0,  # Число монет
 ):
+    """
+    Вся логика игры, оба обьекта меняют число снега до тех пор, пока оно не достигнет нуля или stopSnow
+    """
     snow = 100
     stopSnow = 200
     if type == "company":
@@ -61,6 +64,8 @@ def game(
                     snowCompany.ask("count"),
                     snowCompany.ask("coins"),
                 )
+            elif ans.lower() == "exit":
+                break
             else:
                 print(f"Command {ans} is not found")
                 input()
@@ -109,10 +114,10 @@ if __name__ == "__main__":
                 "snow",
                 clean,
                 snow,
-                save_tuple[1],
+                save_tuple[1],  # used_type_company
                 "rare snow",
-                save_tuple[2],
-                save_tuple[3],
+                save_tuple[2],  # counts
+                save_tuple[3],  # coins
             )
         elif save_tuple[0] == "snow":
             game(
@@ -120,7 +125,7 @@ if __name__ == "__main__":
                 clean,
                 snow,
                 "shovel",
-                save_tuple[1],
-                save_tuple[2],
-                save_tuple[3],
+                save_tuple[1],  # used_type_snow
+                save_tuple[2],  # counts
+                save_tuple[3],  # coins
             )

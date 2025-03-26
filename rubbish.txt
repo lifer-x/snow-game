@@ -1,0 +1,78 @@
+#"snowplow combine":{"effect":50,"next":"hand snowcleaner","strength":100,"cost":50},
+#    "pneumatic snowplow":{"effect":100,"next":"hand snowcleaner","strength":100,"cost":50},
+#    "heat gun":{"effect":250,"next":"hand snowcleaner","strength":100,"cost":50},
+#    "laser":{"effect":500,"next":None,"strength":100,"cost":50},
+clean={
+            "shovel":{
+                "effect":1,
+                "next":"ice breaker",
+                "strength":100,
+                "cost":25,
+                "boost":50
+                },
+            "ice breaker":{
+                "effect":2,
+                "next":"hand snowcleaner",
+                "strength":250,
+                "cost":50,
+                "boost":100
+                },
+            "hand snowcleaner":{
+                "effect":5,
+                "next":"snowcleanmachine",
+                "strength":500,
+                "cost":100,
+                "boost":250
+                },
+            "snowcleanmachine":{
+                "effect":10,
+                "next":"snowplow",
+                "strength":1000,
+                "cost":250,
+                "boost":500
+                },
+            "snowplow":{
+                "effect":25,
+                "next":None,
+                "strength":2500,
+                "cost":500,
+                "boost":1000
+                },
+        }
+        snow={
+            "rare snow":{
+                "effect":1,
+                "next":"light snow",
+                "strength":100,
+                "cost":25,
+                "boost":50
+                },
+            "light snow":{
+                "effect":2,
+                "next":"small snow",
+                "strength":250,
+                "cost":50,
+                "boost":100
+                },
+            "small snow":{
+                "effect":5,
+                "next":"snowfall",
+                "strength":500,
+                "cost":100,
+                "boost":250
+                },
+            "snowfall":{
+                "effect":10,
+                "next":"snowstorm",
+                "strength":1000,
+                "cost":250,
+                "boost":500
+                },
+            "snowstorm":{
+                "effect":25,
+                "next":None,
+                "strength":2500,
+                "cost":500,
+                "boost":1000
+                },
+    }"
