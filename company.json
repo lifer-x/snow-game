@@ -1,0 +1,37 @@
+{
+    "shovel":{
+        "effect":1,
+        "next":"ice breaker",
+        "strength":100,
+        "cost":25,
+        "boost":50
+        },
+    "ice breaker":{
+        "effect":2,
+        "next":"hand snowcleaner",
+        "strength":250,
+        "cost":50,
+        "boost":100
+        },
+    "hand snowcleaner":{
+        "effect":5,
+        "next":"snowcleanmachine",
+        "strength":500,
+        "cost":100,
+        "boost":250
+        },
+    "snowcleanmachine":{
+        "effect":10,
+        "next":"snowplow",
+        "strength":1000,
+        "cost":250,
+        "boost":500
+        },
+    "snowplow":{
+        "effect":25,
+        "next":null,
+        "strength":2500,
+        "cost":500,
+        "boost":1000
+        }
+}
